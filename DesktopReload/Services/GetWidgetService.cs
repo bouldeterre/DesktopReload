@@ -1,5 +1,5 @@
-﻿using DesktopReloaded.Interfaces;
-using DesktopReloaded.Services;
+﻿using DesktopReload.Widget;
+using DesktopReloaded.Interfaces;
 using System;
 using System.Collections.Generic;
 
@@ -13,7 +13,11 @@ namespace DesktopReloaded
        
         public List<IBasicWidget> GetWidgets()
         {
+            widgets.Add(new BootTimeWidget());
             widgets.Add(new UpTimeWidget());
+            widgets.Add(new CPUCountWidget());
+            widgets.Add(new CPUWidget());
+            widgets.Add(new AvailableMemoryWidget());
             return widgets;
         }
 
