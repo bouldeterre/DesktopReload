@@ -18,6 +18,9 @@ namespace DesktopReloaded
             widgets.Add(new CPUCountWidget());
             widgets.Add(new CPUWidget());
             widgets.Add(new AvailableMemoryWidget());
+            widgets.Add(new DiskReadWidget());
+            widgets.Add(new DiskWriteWidget());
+
             return widgets;
         }
 

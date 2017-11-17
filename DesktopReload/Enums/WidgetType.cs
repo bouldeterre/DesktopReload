@@ -5,5 +5,10 @@
         BootTime,
         UpTime,
         Default,
+        CPU,
+        CPUCoresCount,
+        AvailableRAM,
+        DiskRead,
+        DiskWrite,
     };
 }

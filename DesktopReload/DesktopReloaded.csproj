@@ -65,6 +65,11 @@
     <Compile Include="Interfaces\IBasicWidget.cs" />
     <Compile Include="Interfaces\IGetWidgetService.cs" />
     <Compile Include="Widget\BootTimeWidget.cs" />
+    <Compile Include="Widget\CPU\CPUCountWidget.cs" />
+    <Compile Include="Widget\CPU\CPUWidget.cs" />
+    <Compile Include="Widget\Disk\DiskReadWidget.cs" />
+    <Compile Include="Widget\Disk\DiskWriteWidget.cs" />
+    <Compile Include="Widget\Memory\AvailableMemoryWidget.cs" />
     <Compile Include="Widget\UpTimeWidget.cs" />
     <Compile Include="Services\GetWidgetService.cs" />
     <Page Include="Controls\LabelControl.xaml">

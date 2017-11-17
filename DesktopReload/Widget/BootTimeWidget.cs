@@ -1,7 +1,7 @@
 ﻿using Enums;
 using System;
 
-namespace DesktopReloaded.Services
+namespace DesktopReload.Widget
 {
     public class BootTimeWidget : BasicWidget
     {
@@ -21,7 +21,7 @@ namespace DesktopReloaded.Services
         public override void Refresh()
         {
             base.Refresh();
-
+            ValueText = string.Format("{0:hh\\:mm\\:ss}", getBootTime());
         }
     }
 }

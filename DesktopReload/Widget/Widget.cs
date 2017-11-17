@@ -3,7 +3,7 @@ using Enums;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace DesktopReloaded
+namespace DesktopReload.Widget
 {
 
     public class BasicWidget : IBasicWidget, INotifyPropertyChanged

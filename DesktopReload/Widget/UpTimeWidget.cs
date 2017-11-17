@@ -2,10 +2,11 @@
 using System;
 using System.Diagnostics;
 
-namespace DesktopReloaded.Services
+namespace DesktopReload.Widget
 {
     public class UpTimeWidget : BasicWidget
     {
+        private PerformanceCounter uptime = new PerformanceCounter("System", "System Up Time");
 
         public UpTimeWidget()
         {
@@ -16,11 +17,7 @@ namespace DesktopReloaded.Services
 
         public TimeSpan getUptime()
         {
-            using (var uptime = new PerformanceCounter("System", "System Up Time"))
-            {
-                uptime.NextValue();       //Call this an extra time before reading its value
-                return TimeSpan.FromSeconds(uptime.NextValue());
-            }
+            return TimeSpan.FromSeconds(uptime.NextValue());
         }
 
         public override void Refresh()
