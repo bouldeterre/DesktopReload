@@ -3,5 +3,6 @@
     public enum WidgetViewType
     {
         Label,
+        LabelList,
     };
 }

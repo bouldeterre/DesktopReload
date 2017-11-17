@@ -10,5 +10,6 @@
         AvailableRAM,
         DiskRead,
         DiskWrite,
+        DiskList,
     };
 }

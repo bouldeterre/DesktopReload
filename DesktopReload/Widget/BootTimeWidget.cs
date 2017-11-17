@@ -10,7 +10,7 @@ namespace DesktopReload.Widget
         {
             LabelText = "Boot Time";
             Type = WidgetType.UpTime;
-            ValueText = "";
+            ValueText = new DateTime().ToString();
         }
 
         public DateTime getBootTime()

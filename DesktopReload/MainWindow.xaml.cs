@@ -1,24 +1,25 @@
-﻿using DesktopReload.Controls;
-using DesktopReloaded.Interfaces;
-using Enums;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using DesktopReload.Controls;
+using DesktopReloaded.Interfaces;
+using Enums;
 
 namespace DesktopReloaded
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    ///     Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        GetWidgetService WidgetService;
+        private readonly List<IBasicWidget> widgets = new List<IBasicWidget>();
+        private readonly GetWidgetService WidgetService;
 
-        List<IBasicWidget> widgets = new List<IBasicWidget>();
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = this;
+            DataContext = this;
 
             WidgetService = new GetWidgetService();
 
@@ -27,23 +28,34 @@ namespace DesktopReloaded
             CreateViews();
         }
 
-        void CreateViews()
+        private void CreateViews()
         {
-            if ( widgets != null)
-            foreach (var widget in widgets) {
-                Control elemWidget = null;
-
-                switch (widget.ViewType)
+            if (widgets != null)
+                foreach (var widget in widgets)
                 {
-                    case WidgetViewType.Label:
-                        elemWidget = createLabelWidget(widget);
-                        break;
-                }
-                elemWidget.DataContext = widget;
-                if (elemWidget != null)
-                    GeneralStack.Children.Add(elemWidget);
-            }
+                    Control elemWidget = null;
 
+                    switch (widget.ViewType)
+                    {
+                        case WidgetViewType.Label:
+                            elemWidget = createLabelWidget(widget);
+                            break;
+                        case WidgetViewType.LabelList:
+                            elemWidget = createLabelListWidget(widget);
+                            break;
+                    }
+                    if (elemWidget != null)
+                    {
+                        elemWidget.DataContext = widget;
+                        GeneralStack.Children.Add(elemWidget);
+                    }
+                }
+        }
+
+        private Control createLabelListWidget(IBasicWidget widget)
+        {
+            var listlabel = new LabelListControl();
+            return listlabel;
         }
 
         private Control createLabelWidget(IBasicWidget widget)
