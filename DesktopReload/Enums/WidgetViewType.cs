@@ -4,5 +4,6 @@
     {
         Label,
         LabelList,
+        SimpleGraph,
     };
 }

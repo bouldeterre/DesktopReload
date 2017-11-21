@@ -46,11 +46,16 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NAudio, Version=1.8.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.8.3\lib\net35\NAudio.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xaml">
@@ -71,10 +76,15 @@
     <Compile Include="Controls\LabelListControl.xaml.cs">
       <DependentUpon>LabelListControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\SimpleGraphControl.xaml.cs">
+      <DependentUpon>SimpleGraphControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Enums\WidgetRefreshRate.cs" />
     <Compile Include="Enums\WidgetViewType.cs" />
     <Compile Include="Enums\WidgetType.cs" />
     <Compile Include="Interfaces\IBasicWidget.cs" />
     <Compile Include="Interfaces\IGetWidgetService.cs" />
+    <Compile Include="Model\MEMORYSTATUSEX.cs" />
     <Compile Include="Widget\BootTimeWidget.cs" />
     <Compile Include="Widget\CPU\CPUCountWidget.cs" />
     <Compile Include="Widget\CPU\CPUWidget.cs" />
@@ -84,6 +94,9 @@
     <Compile Include="Widget\Disk\DiskWriteWidget.cs" />
     <Compile Include="Widget\Memory\TotalMemoryWidget.cs" />
     <Compile Include="Widget\Memory\AvailableMemoryWidget.cs" />
+    <Compile Include="Widget\Music\SoundOutputListWidget.cs" />
+    <Compile Include="Widget\Music\SoundVolumeWidget.cs" />
+    <Compile Include="Widget\Music\SoundWaveWidget.cs" />
     <Compile Include="Widget\UpTimeWidget.cs" />
     <Compile Include="Services\GetWidgetService.cs" />
     <Page Include="Controls\LabelControl.xaml">
@@ -91,6 +104,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\LabelListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SimpleGraphControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -126,6 +143,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -136,9 +154,7 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>

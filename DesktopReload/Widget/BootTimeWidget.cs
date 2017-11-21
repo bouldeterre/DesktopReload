@@ -5,7 +5,6 @@ namespace DesktopReload.Widget
 {
     public class BootTimeWidget : BasicWidget
     {
-
         public BootTimeWidget()
         {
             LabelText = "Boot Time";

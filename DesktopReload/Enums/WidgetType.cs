@@ -12,5 +12,6 @@
         DiskWrite,
         DiskList,
         CPUList,
+        SoundOutputList,
     };
 }

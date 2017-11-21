@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using DesktopReload.Controls;
 using DesktopReloaded.Interfaces;
 using Enums;
+using System.Windows.Input;
+using NAudio.CoreAudioApi;
 
 namespace DesktopReloaded
 {
@@ -13,7 +14,7 @@ namespace DesktopReloaded
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly List<IBasicWidget> widgets = new List<IBasicWidget>();
+        private readonly IList<IBasicWidget> widgets = new List<IBasicWidget>();
         private readonly GetWidgetService WidgetService;
 
         public MainWindow()
@@ -30,11 +31,8 @@ namespace DesktopReloaded
             GeneralWindow.Top = 100;
 #endif
 
-            var location = new Point(100, 100);
             WidgetService = new GetWidgetService();
-
             widgets = WidgetService.GetWidgets();
-
             CreateViews();
         }
 
@@ -43,7 +41,7 @@ namespace DesktopReloaded
             if (widgets != null)
                 foreach (var widget in widgets)
                 {
-                    Control elemWidget = null;
+                    UserControl elemWidget = null;
 
                     switch (widget.ViewType)
                     {
@@ -52,6 +50,9 @@ namespace DesktopReloaded
                             break;
                         case WidgetViewType.LabelList:
                             elemWidget = createLabelListWidget(widget);
+                            break;
+                        case WidgetViewType.SimpleGraph:
+                            elemWidget = createSimpleGraphWidget(widget);
                             break;
                     }
                     if (elemWidget != null)
@@ -62,16 +63,30 @@ namespace DesktopReloaded
                 }
         }
 
-        private Control createLabelListWidget(IBasicWidget widget)
+        protected override void OnMouseDown(MouseButtonEventArgs e)
         {
-            var listlabel = new LabelListControl();
-            return listlabel;
+            base.OnMouseDown(e);
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
         }
 
-        private Control createLabelWidget(IBasicWidget widget)
+
+        private UserControl createLabelListWidget(IBasicWidget widget)
         {
-            var label = new LabelControl();
-            return label;
+            var control = new LabelListControl();
+            return control;
+        }
+
+        private UserControl createLabelWidget(IBasicWidget widget)
+        {
+            var control = new LabelControl();
+            return control;
+        }
+
+        private UserControl createSimpleGraphWidget(IBasicWidget widget)
+        {
+            var control = new SimpleGraphControl();
+            return control;
         }
     }
 }

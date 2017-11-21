@@ -1,24 +1,15 @@
-﻿<!--AllowsTransparency="True"
-        WindowStyle="None" 
-        Background="#00000000" WindowStyle="None"
-       AllowsTransparency="True"
-    
-    -->
-<!--WindowStyle="None" 
-        AllowsTransparency="True"-->
-<Window 
+﻿<Window 
         x:Name="GeneralWindow"
         x:Class="DesktopReloaded.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DesktopReloaded"
         mc:Ignorable="d"
         Title="MainWindow"
         Height="600" Width="525"
         ShowInTaskbar="False"
-        Background="#4C636363"            
+        Background="#4C636363"
     >
     <Window.Resources>
         <Style TargetType="TextBlock">

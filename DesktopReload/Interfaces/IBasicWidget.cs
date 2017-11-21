@@ -8,6 +8,7 @@ namespace DesktopReloaded.Interfaces
         string ValueText { get; }
         WidgetViewType ViewType { get ; }
         WidgetType Type { get; }
+        WidgetRefreshRate RefreshRate { get; }
 
         void Refresh();
     }

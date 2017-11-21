@@ -11,6 +11,7 @@ namespace DesktopReload.Widget
         public string name;
         private WidgetType type;
         private WidgetViewType viewType;
+        private WidgetRefreshRate refreshRate;
 
         private string labelText;
         private string valueText;
@@ -27,6 +28,8 @@ namespace DesktopReload.Widget
 
         public WidgetViewType ViewType { get => viewType; set => viewType = value; }
         public WidgetType Type { get => type; set => type = value; }
+        public WidgetRefreshRate RefreshRate { get => refreshRate; set => refreshRate = value; }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
@@ -53,6 +56,7 @@ namespace DesktopReload.Widget
             name = "default";
             Type = WidgetType.Default;
             ViewType = WidgetViewType.Label;
+            refreshRate = WidgetRefreshRate.Default;
             LabelText = "defaultLabel";
             ValueText = "defaultValue";
         }

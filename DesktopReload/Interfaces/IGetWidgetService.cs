@@ -4,6 +4,6 @@ namespace DesktopReloaded.Interfaces
 {
     public interface IGetWidgetService
     {
-        List<IBasicWidget> GetWidgets();
+        IList<IBasicWidget> GetWidgets();
     }
 }
