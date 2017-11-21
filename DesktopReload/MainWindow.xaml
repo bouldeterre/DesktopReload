@@ -4,7 +4,8 @@
        AllowsTransparency="True"
     
     -->
-
+<!--WindowStyle="None" 
+        AllowsTransparency="True"-->
 <Window 
         x:Name="GeneralWindow"
         x:Class="DesktopReloaded.MainWindow"
@@ -15,8 +16,9 @@
         xmlns:local="clr-namespace:DesktopReloaded"
         mc:Ignorable="d"
         Title="MainWindow"
-        Height="800" Width="525" 
-        Background="#FFCBCBCB"    
+        Height="600" Width="525"
+        ShowInTaskbar="False"
+        Background="#4C636363"            
     >
     <Window.Resources>
         <Style TargetType="TextBlock">
@@ -27,7 +29,7 @@
         </Style>
     </Window.Resources>
 
-    <Grid>
+    <Grid >
         <StackPanel x:Name="GeneralStack"  />
     </Grid>
 </Window>

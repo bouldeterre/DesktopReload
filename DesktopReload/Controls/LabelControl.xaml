@@ -10,7 +10,7 @@
              >
 
 
-    <Grid  Background="#777777" Height="Auto">
+    <Grid  Background="#7F9B9B9B"  Height="Auto">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="Auto" />

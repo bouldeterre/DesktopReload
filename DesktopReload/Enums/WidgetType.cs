@@ -11,5 +11,6 @@
         DiskRead,
         DiskWrite,
         DiskList,
+        CPUList,
     };
 }

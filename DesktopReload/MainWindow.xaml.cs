@@ -21,6 +21,16 @@ namespace DesktopReloaded
             InitializeComponent();
             DataContext = this;
 
+#if DEBUG
+            
+#else
+            WindowStyle = WindowStyle.None;
+            AllowsTransparency = true;
+            GeneralWindow.Left = 600;
+            GeneralWindow.Top = 100;
+#endif
+
+            var location = new Point(100, 100);
             WidgetService = new GetWidgetService();
 
             widgets = WidgetService.GetWidgets();

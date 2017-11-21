@@ -8,13 +8,13 @@
              d:DataContext="{d:DesignInstance myApp:DiskListWidget, IsDesignTimeCreatable=True}"
              mc:Ignorable="d" Width="250.179" Height="Auto">
     
-    <Grid  Background="#777777" Height="Auto">
+    <Grid  Background="#7F9B9B9B" Height="Auto">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Label  Grid.Column="0" FontWeight="Bold" Foreground="Chartreuse"  Content="{Binding LabelText}" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
-        <ItemsControl   IsEnabled="False" Grid.Column="1" Background="Transparent" ItemsSource="{Binding LabelTextList}">
+        <ItemsControl  Height="Auto" IsEnabled="False" Grid.Column="1" Background="Transparent" ItemsSource="{Binding LabelTextList}">
             
             
         </ItemsControl>

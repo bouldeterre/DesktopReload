@@ -10,32 +10,31 @@ using System.Threading.Tasks;
 
 namespace DesktopReload.Widget
 {
-    public class DiskListWidget : BasicWidget
+    public class CPUListWidget : BasicWidget
     {
         PerformanceCounter pc = new PerformanceCounter("PhysicalDisk", "Disk Read Bytes/sec", "_Total");
 
         ObservableCollection<string> LabelTextList = new ObservableCollection<string>()
         {
-            "Disk1",
-            "Disk2",
-            "Disk3"
+            "CPU1",
+            "CPU2",
+            "CPU3"
         };
-
-        public DiskListWidget()
+        public CPUListWidget()
         {
-            LabelText = "Disk List";
-            Type = WidgetType.DiskList;
+            LabelText = "CPU List";
+            Type = WidgetType.CPUList;
             ViewType = WidgetViewType.LabelList;
         }
 
         public void getData()
         {
             LabelTextList.Clear();
-            var cat = new System.Diagnostics.PerformanceCounterCategory("PhysicalDisk");            
+            var cat = new System.Diagnostics.PerformanceCounterCategory("Processor");            
             var list = cat.GetInstanceNames();
-            foreach (var disk in list)
+            foreach (var cpu in list)
             {
-                LabelTextList.Add(disk);
+                LabelTextList.Add(cpu);
             }
         }
 
