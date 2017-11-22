@@ -25,7 +25,7 @@ namespace DesktopReload.Widget
         public override void Refresh()
         {
             base.Refresh();
-            ValueText = string.Format("{0:hh\\:mm\\:ss}", getUptime());
+            ValueText = string.Format("{0:dd\\.\\d\\a\\y\\s\\ hh\\:mm\\:ss}", getUptime());
 
         }
     }

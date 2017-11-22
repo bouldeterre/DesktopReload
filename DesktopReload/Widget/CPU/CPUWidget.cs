@@ -10,7 +10,7 @@ namespace DesktopReload.Widget
 
         public CPUWidget()
         {
-            LabelText = "CPU";
+            LabelText = "CPU Time";
             Type = WidgetType.CPU;
             RefreshRate = WidgetRefreshRate.Default;
             ValueText = string.Format("{0}", getUptime());
@@ -18,8 +18,8 @@ namespace DesktopReload.Widget
 
         public float getUptime()
         {
-                var tmp = pc.NextValue();       
-                return (float)(Math.Round((double)tmp, 1));;
+            var tmp = pc.NextValue();
+            return tmp; // (float)(Math.Round((double)tmp, 1));;
         }
 
         public override void Refresh()
