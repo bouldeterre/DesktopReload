@@ -16,6 +16,7 @@ namespace DesktopReload.Widget
         {
             LabelText = "Disk Write";
             Type = WidgetType.DiskWrite;
+            RefreshRate = WidgetRefreshRate.Default;
             ValueText = string.Format("{0}KB/s", getData());
         }
 

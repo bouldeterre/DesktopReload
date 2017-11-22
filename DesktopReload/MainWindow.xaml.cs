@@ -65,7 +65,7 @@ namespace DesktopReloaded
 
         protected override void OnMouseDown(MouseButtonEventArgs e)
         {
-            base.OnMouseDown(e);
+            //base.OnMouseDown(e);
             if (e.ChangedButton == MouseButton.Left)
                 this.DragMove();
         }

@@ -12,6 +12,7 @@ namespace DesktopReloaded
     {
         IList<IBasicWidget> widgets = new List<IBasicWidget>();
         System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer(priority: System.Windows.Threading.DispatcherPriority.Background);
+        System.Windows.Threading.DispatcherTimer LeastdispatcherTimer = new System.Windows.Threading.DispatcherTimer(priority: System.Windows.Threading.DispatcherPriority.Background);
         System.Windows.Threading.DispatcherTimer RealtimedispatcherTimer = new System.Windows.Threading.DispatcherTimer(priority: System.Windows.Threading.DispatcherPriority.Background);
 
         public IList<IBasicWidget> GetWidgets()
@@ -38,14 +39,27 @@ namespace DesktopReloaded
 
         public GetWidgetService()
         {
+            LeastdispatcherTimer.Tick += new EventHandler(RefreshLeastWidgets);
+            LeastdispatcherTimer.Interval = new TimeSpan(0, 0, 10);
+            LeastdispatcherTimer.Start();
+
             dispatcherTimer.Tick += new EventHandler(RefreshWidgets);
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
             dispatcherTimer.Start();
 
             RealtimedispatcherTimer.Tick += new EventHandler(RefreshRealtimeWidgets);
-            RealtimedispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 200);
+            RealtimedispatcherTimer.Interval = new TimeSpan(0, 0, 0, 1, 0);
             RealtimedispatcherTimer.Start();
 
+        }
+
+        private void RefreshLeastWidgets(object sender, EventArgs e)
+        {
+            foreach (var widgets in widgets)
+            {
+                if (widgets.RefreshRate == WidgetRefreshRate.Least)
+                    widgets.Refresh();
+            }
         }
 
         private void RefreshWidgets(object sender, EventArgs e)

@@ -16,6 +16,7 @@ namespace DesktopReload.Widget
         {
             LabelText = "Available Memory";
             Type = WidgetType.AvailableRAM;
+            RefreshRate = WidgetRefreshRate.Default;
             ValueText = string.Format("{0}mb", getData());
         }
 

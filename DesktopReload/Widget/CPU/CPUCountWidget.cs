@@ -14,6 +14,7 @@ namespace DesktopReload.Widget
         {
             LabelText = "CPU Cores Count";
             Type = WidgetType.CPUCoresCount;
+            RefreshRate = WidgetRefreshRate.None;
             ValueText = string.Format("{0}", getData());
         }
 

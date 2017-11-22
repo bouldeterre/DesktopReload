@@ -20,6 +20,7 @@ namespace DesktopReload.Widget
             LabelText = "Sound Outputs:";
             Type = WidgetType.SoundOutputList;
             ViewType = WidgetViewType.LabelList;
+            RefreshRate = WidgetRefreshRate.Least;
             LabelTextList = new ObservableCollection<string>()
             {
                 "Audio1",

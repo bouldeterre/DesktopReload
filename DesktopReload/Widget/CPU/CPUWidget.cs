@@ -12,6 +12,7 @@ namespace DesktopReload.Widget
         {
             LabelText = "CPU";
             Type = WidgetType.CPU;
+            RefreshRate = WidgetRefreshRate.Default;
             ValueText = string.Format("{0}", getUptime());
         }
 

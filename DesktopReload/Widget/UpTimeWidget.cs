@@ -12,6 +12,8 @@ namespace DesktopReload.Widget
         {
             LabelText = "Up Time";
             Type = WidgetType.UpTime;
+            RefreshRate = WidgetRefreshRate.Default;
+
             ValueText = string.Format("{0:hh\\:mm\\:ss}", getUptime());
         }
 

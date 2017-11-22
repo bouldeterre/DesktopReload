@@ -17,9 +17,12 @@ namespace DesktopReload.Widget
 
         public DiskListWidget()
         {
-            LabelText = "Disk List";
             Type = WidgetType.DiskList;
             ViewType = WidgetViewType.LabelList;
+            RefreshRate = WidgetRefreshRate.None;
+            RefreshRate = WidgetRefreshRate.Least;
+
+            LabelText = "Disk List";
             LabelTextList = new ObservableCollection<string>()
             {
                 "Disk1",

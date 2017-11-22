@@ -23,6 +23,7 @@ namespace DesktopReload.Widget
         {
            LabelText = "Total Memory";
            Type = WidgetType.AvailableRAM;
+           RefreshRate = WidgetRefreshRate.None;
 
             MEMORYSTATUSEX memStatus = new MEMORYSTATUSEX();
             if (GlobalMemoryStatusEx(memStatus))

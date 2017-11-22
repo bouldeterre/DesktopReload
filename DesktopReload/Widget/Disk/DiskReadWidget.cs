@@ -16,6 +16,7 @@ namespace DesktopReload.Widget
         {
             LabelText = "Disk Read";
             Type = WidgetType.DiskRead;
+            RefreshRate = WidgetRefreshRate.Default;
             ValueText = string.Format("{0}KB/s", getData());
         }
 
