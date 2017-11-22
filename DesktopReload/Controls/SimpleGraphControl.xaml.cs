@@ -23,17 +23,12 @@ namespace DesktopReload.Controls
 
         readonly WriteableBitmap bitmap;
         readonly int ptr;
-      
+        private int value = 100;
         public SimpleGraphControl()
         {
             InitializeComponent();
 
-
-            var width  = (int)ControlImage.Width ;
-            var height = (int) ControlImage.Height;
-
         }
-
 
     }
 }

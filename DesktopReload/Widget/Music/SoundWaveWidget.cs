@@ -8,6 +8,17 @@ namespace DesktopReload.Widget
     {
         MMDeviceEnumerator enumerator = new MMDeviceEnumerator();
         private MMDeviceCollection collection;
+        private int _graphValue = 90;
+
+        public int GraphValue
+        {
+            get { return _graphValue; }
+            set
+            {
+                SetField(ref _graphValue, value, "GraphValue");
+            }
+        }
+
         public SoundWaveWidget()
         {
             LabelText = "Sound Wave";
@@ -20,10 +31,8 @@ namespace DesktopReload.Widget
         public override void Refresh()
         {
             base.Refresh();
-            ValueText = "";
             var device = collection.ToArray()[0];
-            ValueText = device.AudioMeterInformation.MasterPeakValue.ToString();
-            //+= device.AudioMeterInformation.MasterPeakValue;
+            GraphValue = (int) (device.AudioMeterInformation.MasterPeakValue * 100);
         }
     }
 }

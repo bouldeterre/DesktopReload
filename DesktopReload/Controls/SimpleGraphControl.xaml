@@ -4,9 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" Width="250.179" Height="Auto"
-             xmlns:myApp="clr-namespace:DesktopReload.Widget" 
+             xmlns:myApp="clr-namespace:DesktopReload.Widget"
+             xmlns:converters="clr-namespace:DesktopReload.Converters"
              d:DataContext="{d:DesignInstance myApp:SoundWaveWidget, IsDesignTimeCreatable=True}"
 >
+    <UserControl.Resources>
+        <converters:ValueToGraphWidthConverter x:Key="ValueToGraphWidthConverter"/>
+    </UserControl.Resources>
 
     <Grid  Background="#7F9B9B9B"  Height="Auto">
         <Grid.ColumnDefinitions>
@@ -14,7 +18,15 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Label Grid.Column="0" FontWeight="Bold" Foreground="Chartreuse" Content="{Binding LabelText}" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
-        <Image Name="ControlImage" Grid.Column="1" />
+        <Canvas Name="ControlCanvas" Grid.Column="1" >
+            <Rectangle x:Name="BackgroundGraph" Fill="AliceBlue" Width="{Binding ActualWidth, ElementName=ControlCanvas, Mode=OneWay}" Height="{Binding ActualHeight, ElementName=ControlCanvas, Mode=OneWay}"/>
+            <Rectangle
+                Canvas.Left="2" Canvas.Top="2"
+                Width="{Binding GraphValue,
+                Converter={ StaticResource ValueToGraphWidthConverter},
+                ConverterParameter={x:Reference BackgroundGraph} }" Height="20"
+                Stroke="Black" StrokeThickness="2" Fill="Red" />
+        </Canvas>
         <!--<Label Grid.Column="1" Content="{Binding ValueText}" HorizontalAlignment="Center"  VerticalAlignment="Top" />-->
     </Grid>
 </UserControl>

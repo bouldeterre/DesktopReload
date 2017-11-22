@@ -79,6 +79,7 @@
     <Compile Include="Controls\SimpleGraphControl.xaml.cs">
       <DependentUpon>SimpleGraphControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\ValueToGraphWidthConverter.cs" />
     <Compile Include="Enums\WidgetRefreshRate.cs" />
     <Compile Include="Enums\WidgetViewType.cs" />
     <Compile Include="Enums\WidgetType.cs" />
