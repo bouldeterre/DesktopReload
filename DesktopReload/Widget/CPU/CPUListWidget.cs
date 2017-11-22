@@ -13,7 +13,7 @@ namespace DesktopReload.Widget
     {
         PerformanceCounter pc = new PerformanceCounter("PhysicalDisk", "Disk Read Bytes/sec", "_Total");
 
-        ObservableCollection<string> LabelTextList = new ObservableCollection<string>()
+        public ObservableCollection<string> LabelTextList = new ObservableCollection<string>()
         {
             "CPU1",
             "CPU2",

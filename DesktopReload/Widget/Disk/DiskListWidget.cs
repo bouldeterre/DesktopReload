@@ -13,18 +13,19 @@ namespace DesktopReload.Widget
     {
         PerformanceCounter pc = new PerformanceCounter("PhysicalDisk", "Disk Read Bytes/sec", "_Total");
 
-        ObservableCollection<string> LabelTextList = new ObservableCollection<string>()
-        {
-            "Disk1",
-            "Disk2",
-            "Disk3"
-        };
+        public ObservableCollection<string> LabelTextList { get; set; }
 
         public DiskListWidget()
         {
             LabelText = "Disk List";
             Type = WidgetType.DiskList;
             ViewType = WidgetViewType.LabelList;
+            LabelTextList = new ObservableCollection<string>()
+            {
+                "Disk1",
+                "Disk2",
+                "Disk3"
+            };
         }
 
         public void getData()

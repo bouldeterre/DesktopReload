@@ -7,24 +7,25 @@ using NAudio.CoreAudioApi;
 using Enums;
 using System.Collections.ObjectModel;
 
-namespace DesktopReload.Widget.Music
+namespace DesktopReload.Widget
 {
     public class SoundOutputListWidget : BasicWidget
     {
         MMDeviceEnumerator enumerator = new MMDeviceEnumerator();
         private MMDeviceCollection collection;
-        ObservableCollection<string> LabelTextList = new ObservableCollection<string>()
-        {
-            "Audio1",
-            "Audio2",
-            "Audio3"
-        };
+        public ObservableCollection<string> LabelTextList { get; set; }
 
         public SoundOutputListWidget()
         {
             LabelText = "Sound Outputs:";
             Type = WidgetType.SoundOutputList;
             ViewType = WidgetViewType.LabelList;
+            LabelTextList = new ObservableCollection<string>()
+            {
+                "Audio1",
+                "Audio2",
+                "Audio3"
+            };
 
             collection = enumerator.EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active);
         }
