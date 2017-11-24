@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:DesktopReload.Controls"
              xmlns:myApp="clr-namespace:DesktopReload.Widget" 
              d:DataContext="{d:DesignInstance myApp:DiskListWidget, IsDesignTimeCreatable=True}"
-             mc:Ignorable="d" Width="250.179" Height="Auto">
+             mc:Ignorable="d" Width="250" Height="Auto">
     
     <Grid  Background="#7F9B9B9B" Height="Auto">
         <Grid.ColumnDefinitions>

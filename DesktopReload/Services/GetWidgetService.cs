@@ -31,8 +31,10 @@ namespace DesktopReloaded
 
             widgets.Add(new SoundOutputListWidget());
             widgets.Add(new SoundVolumeWidget());
-            
+
             widgets.Add(new SoundWaveWidget());
+            widgets.Add(new SpotifyWidget());
+            
             return widgets;
         }
 

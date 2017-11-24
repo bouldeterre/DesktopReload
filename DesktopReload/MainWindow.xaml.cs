@@ -54,6 +54,9 @@ namespace DesktopReloaded
                         case WidgetViewType.SimpleGraph:
                             elemWidget = createSimpleGraphWidget(widget);
                             break;
+                        case WidgetViewType.MusicPlayer:
+                            elemWidget = createMusicPlayerWidget(widget);
+                            break;
                     }
                     if (elemWidget != null)
                     {
@@ -86,6 +89,12 @@ namespace DesktopReloaded
         private UserControl createSimpleGraphWidget(IBasicWidget widget)
         {
             var control = new SimpleGraphControl();
+            return control;
+        }
+
+        private UserControl createMusicPlayerWidget(IBasicWidget widget)
+        {
+            var control = new MusicPlayerControl();
             return control;
         }
     }

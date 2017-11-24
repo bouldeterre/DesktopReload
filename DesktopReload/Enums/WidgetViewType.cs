@@ -5,5 +5,6 @@
         Label,
         LabelList,
         SimpleGraph,
+        MusicPlayer,
     };
 }

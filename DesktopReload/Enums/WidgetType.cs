@@ -13,5 +13,6 @@
         DiskList,
         CPUList,
         SoundOutputList,
+        SpotifyPlayer,
     };
 }
