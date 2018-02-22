@@ -1,6 +1,6 @@
 # DesktopReload
 
-![alt text](https://raw.githubusercontent.com/bouldeterre/DesktopReload/master/Capture.PNG"Capture")
+![alt text](https://github.com/bouldeterre/DesktopReload/blob/master/Capture.PNG?raw=true"Capture")
 
 Inspired by:
  - [Desktop Info](http://www.glenn.delahoy.com/software/) from Glenn Delahoy
